@@ -12,7 +12,7 @@ const int NCHAR = 26;
 class ScrabbleWordFinder {
 	int primes[NCHAR];
 	int alphaWeight[NCHAR];
-	map<unsigned long long, string> primeAnagram;
+	map<unsigned long long, string> hashValWordMap;
 
 	void insertInMap(unsigned long long key, string value);
 	void loadDict(string inFile);
@@ -21,7 +21,6 @@ class ScrabbleWordFinder {
 	void updateMaxScore(string word) ;
 	void processAllSubstrings(string str, bool present[],int index);
 
-	void handleBlank(string word, string addedChars);
 
 	struct {
 		string words;
