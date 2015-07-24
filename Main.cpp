@@ -1,15 +1,6 @@
-//============================================================================
-// Name        : Scrabble.cpp
-// Author      : 
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
 
 #include <iostream>
 #include "ScrabbleDict.h"
-
-
 using namespace std;
 
 int main(int argc, char **argv) {
@@ -18,13 +9,13 @@ int main(int argc, char **argv) {
 	 return -1;
 	 }
 	string inputFile = argv[1];
-	ScrabbleDict scrabbledict(inputFile);
+	ScrabbleWordFinder wordFinder(inputFile);
 
 
-	string charsInHand;
+	string lettersInHand;
 	cout << "Enter your rack: ";
-	std::getline (std::cin,charsInHand);
-	string validWord = scrabbledict.getMaxScoreWord(charsInHand);
-	cout << validWord <<endl;
+	std::getline (std::cin,lettersInHand);
+	string maxScoreWord = wordFinder.getMaxScoreWord(lettersInHand);
+	cout << maxScoreWord <<endl;
 	return 0;
 }
