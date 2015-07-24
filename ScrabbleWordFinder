@@ -1,13 +1,7 @@
-/*
- * ScrabbleDict.h
- *
- *  Created on: Jul 23, 2015
- *      Author: test
- */
 
 
-#ifndef SCRABBLEDICT_H_
-#define SCRABBLEDICT_H_
+#ifndef SCRABBLE_WORD_FINDER_H_
+#define SCRABBLE_WORD_FINDER_H_
 
 #include <string>
 #include <map>
@@ -15,7 +9,7 @@ using namespace std;
 
 const int NCHAR = 26;
 
-class ScrabbleDict {
+class ScrabbleWordFinder {
 	int primes[NCHAR];
 	int alphaWeight[NCHAR];
 	map<unsigned long long, string> primeAnagram;
@@ -36,7 +30,7 @@ class ScrabbleDict {
 
 
 public:
-	ScrabbleDict(string FileName);
+	ScrabbleWordFinder(string FileName);
 	void printDict();
 	int calculateScore(string word);
 	unsigned long long int getHash(string str);
@@ -44,4 +38,4 @@ public:
 
 };
 
-#endif /* SCRABBLEDICT_H_ */
+#endif 
